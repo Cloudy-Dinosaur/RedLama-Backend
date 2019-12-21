@@ -12,6 +12,8 @@ dependencies {
     compileOnly 'org.projectlombok:lombok:1.18.10'
     annotationProcessor 'org.projectlombok:lombok:1.18.10'
     implementation "org.springframework.boot:spring-boot-starter-web"
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    runtimeOnly 'mysql:mysql-connector-java'
 }
 
 sourceSets{
@@ -20,4 +22,18 @@ sourceSets{
 
 bootJar {
     mainClassName = 'Application'
+}
+
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Main-Class': 'jchat.Application'
+    }
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
 }
