@@ -5,9 +5,11 @@ import jchat.repository.UserRepository;
 import net.bytebuddy.utility.RandomString;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 
+@Service
 public class UserRegisterService {
 
     private static final int SALT_LENGTH = 10;
@@ -21,6 +23,9 @@ public class UserRegisterService {
      * @throws UserExistsException throws when username or email is taken
      */
   public User createNewUser(User user) throws UserExistsException {
+      if (user == null){
+          throw new NullPointerException();
+      }
     if (!doesUserExist(user)) {
         user.setPasswordSalt(generatePasswordSalt());
         String saltedPassword = saltPassword(user.getPassword(), user.getPasswordSalt());

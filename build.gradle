@@ -15,10 +15,12 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     runtimeOnly 'mysql:mysql-connector-java'
     implementation group: 'commons-codec', name: 'commons-codec', version: '1.13'
+    testCompile"org.springframework.boot:spring-boot-starter-test"
 }
 
 sourceSets{
     main.java.srcDirs = ['src/']
+    test.java.srcDirs = ['test/']
 }
 
 bootJar {
