@@ -1,4 +1,4 @@
-package jchat.service;
+package api.service;
 
 public class UserRegister {
 }

@@ -1,4 +1,4 @@
-package jchat.entity;
+package api.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
