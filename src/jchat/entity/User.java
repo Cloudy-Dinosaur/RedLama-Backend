@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = User.TABLE_NAME)
@@ -17,18 +19,24 @@ public class User {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private int id;
 
+  @NotBlank(message = "Name is mandatory")
   @Getter @Setter
   private String lastName;
 
+  @NotBlank(message = "Name is mandatory")
   @Getter @Setter
   private String firstName;
 
+  @NotBlank(message = "Email is mandatory")
+  @Email
   @Getter @Setter
   private String emailAddress;
 
+  @NotBlank(message = "User name is mandatory")
   @Getter @Setter
   private String userName;
 
+  @NotBlank(message = "Password is mandatory")
   @JsonProperty(access = Access.WRITE_ONLY) @Getter @Setter
   private String password;
 
