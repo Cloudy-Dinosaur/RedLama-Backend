@@ -11,4 +11,7 @@ public interface ChatDataRepository extends CrudRepository<ChatMessage, Integer>
     @Query("SELECT u FROM ChatMessage u WHERE u.sender = ?1")
     Iterable<ChatMessage> findMessageBySender(String userName);
 
+    @Query("SELECT u FROM ChatMessage u WHERE u.receiver = ?1 AND u.sender = ?2")
+    Iterable<ChatMessage> allMessagesForReceiverFromSender(String receiver, String sender);
+
 }
