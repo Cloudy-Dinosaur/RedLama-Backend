@@ -1,6 +1,6 @@
-package api.repository;
+package jchat.repository;
 
-import api.entity.User;
+import jchat.entity.User;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
@@ -12,5 +12,4 @@ public interface UserRepository extends CrudRepository<User, Integer> {
 
     @Query("SELECT u FROM User u WHERE u.emailAddress = ?1")
     ArrayList<User> findUserByEmailAddress(String emailAddress);
-
 }
