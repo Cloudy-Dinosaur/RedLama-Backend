@@ -1,9 +1,9 @@
-package jchat.service;
+package api.service;
 
-import jchat.entity.User;
-import jchat.exception.EmailTakenException;
-import jchat.exception.UserNameTakenException;
-import jchat.repository.UserRepository;
+import api.entity.User;
+import api.exception.EmailTakenException;
+import api.exception.UserNameTakenException;
+import api.repository.UserRepository;
 import net.bytebuddy.utility.RandomString;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.beans.factory.annotation.Autowired;

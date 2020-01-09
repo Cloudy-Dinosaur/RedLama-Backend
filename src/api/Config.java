@@ -1,6 +1,6 @@
-package jchat;
+package api;
 
-import jchat.service.UserRegisterService;
+import api.service.UserRegisterService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

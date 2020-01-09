@@ -1,4 +1,4 @@
-package jchat.exception;
+package api.exception;
 
 public class UserNameTakenException extends Exception {
     public UserNameTakenException(String errorMessage){

@@ -1,6 +1,6 @@
-package jchat.repository;
+package api.repository;
 
-import jchat.entity.User;
+import api.entity.User;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 

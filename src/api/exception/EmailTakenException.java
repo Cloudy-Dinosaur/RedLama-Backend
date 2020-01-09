@@ -1,4 +1,4 @@
-package jchat.exception;
+package api.exception;
 
 public class EmailTakenException extends Exception {
     public EmailTakenException(String errorMessage){

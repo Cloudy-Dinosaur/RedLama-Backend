@@ -1,7 +1,7 @@
-package jchat.controller;
+package api.controller;
 
-import jchat.exception.EmailTakenException;
-import jchat.exception.UserNameTakenException;
+import api.exception.EmailTakenException;
+import api.exception.UserNameTakenException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

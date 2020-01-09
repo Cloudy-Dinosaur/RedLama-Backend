@@ -25,4 +25,7 @@ public class ChatMessage {
     @Getter @Setter
     private long time;
 
+    @Getter @Setter
+    private boolean seen;
+
 }
